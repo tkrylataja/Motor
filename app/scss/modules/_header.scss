@@ -1,0 +1,101 @@
+.header{
+    position: relative;
+    &__background{
+        background: url('../images/zastavka.jpg') no-repeat bottom right;
+        background-size: cover;
+        height: 92vh;
+        transition: all .3s;
+        @media (max-width: $desktop) {
+            height: 100vh;
+        }
+        &::before {
+            content: '';
+            width: 2px;
+            height: 92vh;
+            background-color: #fff;
+            position: absolute;
+            left: 14%;
+            transition: all .3s;
+            @media (max-width: $desktop) {
+                left: 19%;
+                height: 110vh;
+            }
+        }
+    }
+    &__title{
+        width: 3%;
+        position: absolute;
+        top: 25%;
+        left: 10%;
+        transition: all .3s;
+        @media (max-width: $desktop) {
+            width: 8%;
+            top: 40%;
+        }
+    }
+
+    &__logo {
+        width: 35%;
+        position: absolute;
+        top: 60%;
+        left: 20%;
+        transition: all .3s;
+        @media (max-width:$desktop) {
+            width: 65%;
+            top: 69%;
+        }
+    }
+}
+.menu {
+    height: 8vh;
+    background: #0c1014;
+    border-top: 0.5px solid #fff;
+    border-bottom: 0.5px solid #fff;
+    width: 100%;
+    z-index: 1000; 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    @media (max-width: $desktop) {
+        display: none;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        height: 8vh;
+        justify-content: space-between;
+        font-size: 36px;
+
+    }
+    &__link {
+        height: 5vh;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+
+        &:hover{
+            text-decoration: none;
+            color: $hover;
+            transition: all .2s;
+        }
+    }
+    &__item{
+        position: relative;
+        
+        &::before {
+            content: '';
+            width: 1px;
+            height: 60px;
+            background-color: #fff ;
+            position: absolute;
+            right: -50%;
+            top: -40%;
+        }
+
+        &:last-child::before {
+            display: none;
+        }
+    }
+}
+
